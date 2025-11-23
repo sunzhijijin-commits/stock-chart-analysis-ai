@@ -1,0 +1,42 @@
+{
+  "name": "stock-chart-analysis-ai",
+  "version": "1.0.0",
+  "description": "機関投資家レベルのマルチタイムフレーム株式チャート分析AIアプリ",
+  "private": true,
+  "homepage": "https://sunzhijijin-commits.github.io/stock-chart-analysis-ai",
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "lucide-react": "^0.263.1"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.2.1",
+    "vite": "^5.0.8",
+    "gh-pages": "^6.1.0"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
+  },
+  "keywords": [
+    "stock",
+    "chart",
+    "analysis",
+    "ai",
+    "gemini",
+    "technical-analysis",
+    "trading"
+  ],
+  "author": "sunzhijijin-commits",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sunzhijijin-commits/stock-chart-analysis-ai.git"
+  },
+  "bugs": {
+    "url": "https://github.com/sunzhijijin-commits/stock-chart-analysis-ai/issues"
+  }
+}
