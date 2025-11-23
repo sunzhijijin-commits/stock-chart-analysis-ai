@@ -29,19 +29,31 @@
 ```bash
 # 依存関係のインストール
 npm install
-
-# 開発サーバーの起動
-npm start
 ```
 
 ### APIキーの設定
 
-アプリケーション内のAPIキーを設定する必要があります：
-
 1. Google AI Studioで[Gemini APIキー](https://ai.google.dev/)を取得
-2. アプリケーションコード内の`apiKey`変数に設定
+2. プロジェクトルートに `.env` ファイルを作成：
 
-⚠️ **注意**: 本番環境では環境変数を使用してAPIキーを管理してください。
+```bash
+# .env.exampleをコピー
+cp .env.example .env
+```
+
+3. `.env` ファイルを開き、取得したAPIキーを設定：
+
+```env
+REACT_APP_GEMINI_API_KEY=your_actual_api_key_here
+```
+
+⚠️ **重要**: `.env` ファイルは `.gitignore` に含まれており、Gitにコミットされません。
+
+### 開発サーバーの起動
+
+```bash
+npm start
+```
 
 ## 📖 使い方
 
