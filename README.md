@@ -66,6 +66,12 @@ npm start
 
 ## 📖 使い方
 
+### オンラインデモ
+
+🌐 **ライブデモ**: [https://sunzhijijin-commits.github.io/stock-chart-analysis-ai/](https://sunzhijijin-commits.github.io/stock-chart-analysis-ai/)
+
+### ローカルで使う
+
 1. **チャート画像をアップロード**: 複数の時間軸のチャート画像をドラッグ&ドロップまたはクリックでアップロード
 2. **トレードスタイルを選択**: 自分のトレードスタイルに合わせて期間を選択
 3. **分析を開始**: 「分析を開始（買い）」ボタンをクリック
