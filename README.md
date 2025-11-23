@@ -53,7 +53,7 @@ cp .env.example .env
 3. `.env` ファイルを開き、取得したAPIキーを設定：
 
 ```env
-REACT_APP_GEMINI_API_KEY=your_actual_api_key_here
+VITE_GEMINI_API_KEY=your_actual_api_key_here
 ```
 
 ⚠️ **重要**: `.env` ファイルは `.gitignore` に含まれており、Gitにコミットされません。

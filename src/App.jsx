@@ -444,7 +444,12 @@ const ChatInterface = ({ analysisResult, selectedStyle }) => {
     setLoading(true);
 
     try {
-      const apiKey = process.env.REACT_APP_GEMINI_API_KEY;
+      const apiKey = import.meta.env.VITE_GEMINI_API_KEY || "";
+      if (!apiKey) {
+        setMessages(prev => [...prev, { role: 'assistant', text: 'APIキーが設定されていません。.envファイルを確認してください。' }]);
+        setLoading(false);
+        return;
+      }
       const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=${apiKey}`;
       const styleContext = STYLE_INSTRUCTIONS[selectedStyle];
       const systemContext = `
@@ -500,7 +505,12 @@ const JournalGenerator = ({ analysisResult, selectedStyle }) => {
   const generateJournal = async () => {
     setLoading(true);
     try {
-      const apiKey = process.env.REACT_APP_GEMINI_API_KEY;
+      const apiKey = import.meta.env.VITE_GEMINI_API_KEY || "";
+      if (!apiKey) {
+        setJournal("APIキーが設定されていません。.envファイルを確認してください。");
+        setLoading(false);
+        return;
+      }
       const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=${apiKey}`;
       const styleContext = STYLE_INSTRUCTIONS[selectedStyle];
       const prompt = `
@@ -553,7 +563,12 @@ const App = () => {
     setResult(null);
 
     try {
-      const apiKey = process.env.REACT_APP_GEMINI_API_KEY;
+      const apiKey = import.meta.env.VITE_GEMINI_API_KEY || "";
+      if (!apiKey) {
+        setError("APIキーが設定されていません。.envファイルにVITE_GEMINI_API_KEYを設定してください。");
+        setLoading(false);
+        return;
+      }
       const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=${apiKey}`;
       
       // プロンプトに選択されたスタイルの指示を追加
