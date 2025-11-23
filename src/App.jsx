@@ -625,6 +625,16 @@ const App = () => {
       <Header />
 
       <main className="max-w-7xl mx-auto p-4 md:p-8 space-y-8">
+        
+        {/* 免責事項バナー */}
+        <div className="bg-gradient-to-r from-rose-900/20 to-orange-900/20 border border-rose-500/30 rounded-xl p-4 flex items-start gap-3">
+          <AlertTriangle size={20} className="text-rose-400 flex-shrink-0 mt-0.5" />
+          <div className="space-y-1">
+            <p className="text-sm font-bold text-rose-300">⚠️ 投資助言ではありません</p>
+            <p className="text-xs text-slate-400">本アプリはAI技術を用いた教育・研究目的のツールです。分析結果は参考情報であり、投資判断と結果の責任は利用者自身にあります。金融商品取引法に基づく投資助言業ではありません。</p>
+          </div>
+        </div>
+
         {/* Input Section */}
         <section className="grid grid-cols-1 lg:grid-cols-12 gap-8">
           <div className="lg:col-span-4 space-y-6">
@@ -839,10 +849,30 @@ const App = () => {
 
                 <JournalGenerator analysisResult={result} selectedStyle={tradeStyle} />
                 
-                <div className="text-[10px] text-slate-600 text-center py-4 border-t border-slate-800/50">
-                  免責事項: 本分析はAIによる技術的な推測であり、実際の市場動向を保証するものではありません。最終的な投資判断は自己責任でお願いします。
+                {/* 免責事項 */}
+                <div className="bg-rose-900/10 border border-rose-500/30 rounded-xl p-5 space-y-3">
+                  <div className="flex items-center gap-2 text-rose-400">
+                    <AlertTriangle size={20} />
+                    <h3 className="font-bold text-base">重要な免責事項</h3>
+                  </div>
+                  <div className="space-y-2 text-xs text-slate-300 leading-relaxed">
+                    <p className="font-bold text-rose-300">⚠️ 本アプリは投資助言・投資推奨を行うものではありません</p>
+                    <ul className="space-y-1 ml-4 list-disc text-slate-400">
+                      <li>本アプリはAI技術を用いた教育・研究目的のツールです</li>
+                      <li>分析結果は参考情報であり、実際の市場動向を保証するものではありません</li>
+                      <li>AI生成コンテンツには誤りや不正確な情報が含まれる可能性があります</li>
+                      <li>すべての投資判断と結果に対する責任は利用者自身にあります</li>
+                      <li>本アプリの利用により生じたいかなる損害についても開発者は責任を負いません</li>
+                    </ul>
+                    <p className="text-rose-300 font-medium pt-2 border-t border-rose-500/20">
+                      📚 投資の最終判断は必ずご自身で行い、必要に応じて専門家にご相談ください
+                    </p>
+                  </div>
                 </div>
-
+                
+                <div className="text-[10px] text-slate-600 text-center py-4 border-t border-slate-800/50">
+                  © 2025 Stock Chart Analysis AI - Educational Purpose Only
+                </div>
               </div>
             )}
           </div>
